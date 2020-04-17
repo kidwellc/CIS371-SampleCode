@@ -78,6 +78,11 @@ class ToyController {
             res.end();
         }
     }
+
+    async rawIndex(req, res) {
+        let toys = await ToyDB.allToys();
+        res.send(toys);
+    }
 }
 
 module.exports = ToyController;
